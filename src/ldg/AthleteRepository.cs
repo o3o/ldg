@@ -64,7 +64,7 @@ namespace Talaran.Ldg {
          }
       }
 
-      public SCG.IEnumerable<Athlete> Query(string sql) {
+      public SCG.List<Athlete> Query(string sql) {
          command.CommandText = sql;
          var list = new SCG.List<Athlete>();
          using (var reader = command.ExecuteReader()) {

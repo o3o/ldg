@@ -45,7 +45,7 @@ _createresult_
 # Sinopsi
 
 | action       | year | db | input | config | output |
-|--------------+------+----+-------+--------+--------|
+| ------------ | ---- | -- | ----- | ------ | ------ |
 | Interactive  | x    | x  | -     | x      | -      |
 | Insert       | -    | x  | x     | -      | -      |
 | CreateList   | x    | x  | -     | x      | x      |

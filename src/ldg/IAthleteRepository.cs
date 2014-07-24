@@ -3,7 +3,7 @@ namespace Talaran.Ldg {
    public interface IAthleteRepository {
       void Update(Athlete athlete);
       void DeleteAll();
-      SCG.IEnumerable<Athlete> Query(string sql);
+      SCG.List<Athlete> Query(string sql);
    }
 
 }

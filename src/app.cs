@@ -15,9 +15,9 @@ namespace Talaran.Ldg {
             var connection = new Mono.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
             var command = connection.CreateCommand();
-            command.CommandText =
-               "CREATE TABLE IF NOT EXISTS at (id INTEGER PRIMARY KEY  NOT NULL,name VARCHAR,surname VARCHAR,year INTEGER,gender CHAR,time VARCHAR)";
+            command.CommandText = "CREATE TABLE IF NOT EXISTS at (id INTEGER PRIMARY KEY  NOT NULL,name VARCHAR,surname VARCHAR,year INTEGER,gender CHAR,time VARCHAR)";
             command.ExecuteNonQuery();
+
             var repo = new AthleteRepository(command);
             switch (options.Action) {
                case Action.Module:
@@ -81,25 +81,40 @@ namespace Talaran.Ldg {
                case Action.Interactive:
                   Category[] categories = GetCategories(GetCatFileName(options));
                   var parser = new TimeParser();
+                  System.Console.WriteLine("Insert mm+ss+dd");
+                  System.Console.WriteLine("s|n: next");
+                  System.Console.WriteLine("p  : prev");
+                  System.Console.WriteLine("f  : first");
+                  System.Console.WriteLine("q  : quit");
+                  System.Console.WriteLine();
                   foreach (Category cat in categories) {
                      System.Console.WriteLine("========{0}=========", cat.Id);
                      var athletes = repo.Query(string.Format (cat.Sql, options.YearEdition));
-                     foreach (Athlete athlete in athletes) {
-                        System.Console.Write("{0:00} {1}\t{2}({3}):", athlete.Id, athlete.Surname, athlete.Name, athlete.Gender);
-                        string time = string.Empty;
-                        string fmt = string.Empty;
-                        do {
-                           time = System.Console.ReadLine();
-                           fmt = parser.Parse(time);
-                           if (!string.IsNullOrEmpty(fmt) ) {
-                              System.Console.WriteLine(fmt);
-                              repo.UpdateTime(athlete.Id, fmt);
+                     int len = athletes.Count;
+                     int i = 0;
+                     while (i < len) {
+                        Athlete athlete = athletes[i];
+                        System.Console.Write("{0:00} {1}\t{2}({3}) [{4}]:", athlete.Id, athlete.Surname, athlete.Name, athlete.Gender, athlete.Time);
+                        string input = System.Console.ReadLine();
+                        string fmtTime = parser.Parse(input);
+                        if (IsValidTime(fmtTime)) {
+                              System.Console.WriteLine(fmtTime);
+                              repo.UpdateTime(athlete.Id, fmtTime);
+                              ++i;
+                        } else {
+                           if (IsSkip(input)) {
+                              System.Console.WriteLine("skipped...({0})", athlete.Time);
+                              ++i;
+                           } else if (IsQuit(input)) {
+                              break;
+                           } else if (IsFirst(input)) {
+                              i =  0;
+                           } else if (IsPrev(input)) {
+                              i =  i - 1 < 0 ? 0 : i -1;
                            } else {
-                              if (time != "s") {
-                                 System.Console.WriteLine("invalid..");
-                              }
+                              System.Console.WriteLine("invalid... insert again");
                            }
-                        } while (string.IsNullOrEmpty(fmt) && time != "s");
+                        }
                      }
                   }
                   break;
@@ -107,6 +122,27 @@ namespace Talaran.Ldg {
             connection.Close();
          }
       }
+
+      private static bool IsValidTime(string t) {
+         return !string.IsNullOrEmpty(t);
+      }
+
+      private static bool IsQuit(string t) {
+         return t.ToLower() == "q";
+      }
+
+      private static bool IsFirst(string t) {
+         return t.ToLower() == "f";
+      }
+
+      private static bool IsPrev(string t) {
+         return t.ToLower() == "p";
+      }
+
+      private static bool IsSkip(string t) {
+         return t.ToLower() == "s" || t.ToLower() == "n";
+      }
+
 
       private static Category[] GetCategories(string filename) {
          FileHelpers.FileHelperEngine<Category> engineCat = new FileHelpers.FileHelperEngine<Category>();
@@ -117,19 +153,16 @@ namespace Talaran.Ldg {
          string catFileName = string.Empty;
          switch (options.Action) {
             case Action.Interactive:
-            case Action.CreateList: {
-                                       catFileName = "../support/list.csv";
-                                       break;
-                                    }
-            case Action.CreateResult: {
-                                         catFileName = "../support/cat.csv";
-                                         break;
-                                      }
-            default: {
-                        throw new System.ArgumentException("invalid");
-                     }
-
+            case Action.CreateList:
+               catFileName = "../support/list.csv";
+               break;
+            case Action.CreateResult:
+               catFileName = "../support/cat.csv";
+               break;
+            default:
+               throw new System.ArgumentException("invalid");
          }
+
          if (!string.IsNullOrEmpty(options.Categories)) {
             catFileName = options.Categories;
          }
