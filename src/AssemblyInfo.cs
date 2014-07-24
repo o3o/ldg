@@ -8,7 +8,7 @@
 [assembly: System.Reflection.AssemblyCopyright("Copyright 2014 Microline s.r.l. All rights reserved.")]
 [assembly: System.Reflection.AssemblyTrademark("Microline s.r.l")]
 [assembly: System.Reflection.AssemblyCulture("")]
-[assembly: System.Reflection.AssemblyVersion("0.1.0")]
+[assembly: System.Reflection.AssemblyVersion("0.2.0")]
 [assembly: System.Reflection.AssemblyDelaySign(false)]
 [assembly: System.Reflection.AssemblyKeyFile("")]
 [assembly: System.Reflection.AssemblyKeyName("")]

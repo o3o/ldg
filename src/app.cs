@@ -4,7 +4,7 @@ namespace Talaran.Ldg {
       private static readonly log4net.ILog log =
          log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
       public static void Main(string[] args) {
-         const string VERSION = "0.1.0";
+         const string VERSION = "0.2.0";
          const string RC_FILE = "ldg.conf";
          if (log.IsInfoEnabled) log.Info("Version " + VERSION);
 

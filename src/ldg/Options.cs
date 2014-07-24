@@ -30,7 +30,7 @@ namespace Talaran.Ldg {
 
       [CommandLine.HelpOption(HelpText = "Display this help screen.")]
       public string GetUsage() {
-         const string VERSION = "0.1.0";
+         const string VERSION = "0.2.0";
          var help = new CommandLine.Text.HelpText(new CommandLine.Text.HeadingInfo("Ldg", VERSION));
          help.Copyright = new CommandLine.Text.CopyrightInfo("Gruppo Ragni", 2014, 2019);
          help.AddPreOptionsLine("by ODV");
