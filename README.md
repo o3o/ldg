@@ -42,15 +42,16 @@ Nome del file _pdf_ di output. Il default e' `../classifiche/list{anno}.pdf`
 usando _createlist_ e `../classifiche/class{anno}.pdf` usando usando
 _createresult_ 
 
-# Sinopsi
+# Sinossi
 
-| action       | year | db | input | config | output |
-| ------------ | ---- | -- | ----- | ------ | ------ |
+| action       | year | db    | input | config | output |
+| ------------ | ---- | ----- | ----- | ------ | ------ |
 | Interactive  | x    | x  | -     | x      | -      |
 | Insert       | -    | x  | x     | -      | -      |
 | CreateList   | x    | x  | -     | x      | x      |
 | CreateResult | x    | x  | -     | x      | x      |
 | Module       | x    | x  |       |        |        |
+
 
 # Uso
 
@@ -94,11 +95,13 @@ Lgd.exe -a interactive -y2011 -d ../../db/ldg11.sqlite
 Visualizza gli atleti secondo l'ordine della lista ~../../doc/list.csv~. 
 I tempi possono essere inseriti separati con + oppure . ad esempio
 
-| 2+5+36 | 02:05.36   |
-|  +5+36 | 00:05.36   |
-|     +5 | 00:05.00   |
-|    2+5 | 02:05.00   |
-|    2+0 | 02:00.00   |
+input   | output 
+------- | ---------
+ 2+5+36 | 02:05.36
+  +5+36 | 00:05.36
+     +5 | 00:05.00
+    2+5 | 02:05.00   
+    2+0 | 02:00.00   
 
 
 ## Create la classifica
@@ -120,8 +123,8 @@ Lgd.exe -a createresult -y2011 -d ../db/ldg11.sqlite -i ../support/nuovacat.csv 
 Ci sono 4 gruppi di eta' U08 con eta' <= 7, U10 <= 9, U12 <= 11 e U14 <=
 13 (I quattordicenni gareggiano con gli adulti)
 
-| Cat. | da |  a |
-| ---- | -- | -- |
+| Cat. | da  |  a |
+| ---- | --- | --- |
 | U08  |  4 |  7 |
 | U10  |  8 |  9 |
 | U12  | 10 | 11 |
