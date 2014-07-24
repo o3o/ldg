@@ -1,0 +1,1 @@
+select year, count(*) from at  group by year; 

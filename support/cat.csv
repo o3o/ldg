@@ -1,0 +1,15 @@
+U08M,Categoria U8 Maschile,select * from at where gender="M"  and ({0} - year) <= 7  order by time
+U10M,Categoria U10 Maschile,select * from at where gender="M" and ({0} - year) >= 8 and ({0} - year) <= 9  order by time
+U12M,Categoria U12 Maschile,select * from at where gender="M" and ({0} - year) >= 10 and ({0} - year) <= 11  order by time
+U14M,Categoria U14 Maschile,select * from at where gender="M" and ({0} - year) >= 12 and ({0} - year) <= 13  order by time
+U8F,Categoria U8 Femminile,select * from at where gender="F" and ({0} - year) >= 5 and ({0} - year) <= 7  order by time
+U10F,Categoria U10 Femminile, select * from at where gender="F" and ({0} - year) >= 8 and ({0} - year) <= 9  order by time 
+U12F,Categoria U12 Femminile, select * from at where gender="F" and ({0} - year) >= 10 and ({0} - year) <= 11  order by time
+U14F,Categoria U14 Femminile, select * from at where gender="F" and ({0} - year) >= 12 and ({0} - year) <= 13  order by time
+U08,Categoria U8 Assoluta,select * from at where ({0} - year) <= 7  order by time
+U10,Categoria U10 Assoluta,select * from at where ({0} - year) >= 8 and ({0} - year) <= 9  order by time
+U12,Categoria U12 Assoluta,select * from at where ({0} - year) >= 10 and ({0} - year) <= 11  order by time
+U14,Categoria U14 Assoluta,select * from at where ({0} - year) >= 12 and ({0} - year) <= 13  order by time
+UM,Categoria Assoluta Maschile,select * from at where gender="M" order by time
+UF,Categoria Assoluta Femminile,select * from at where gender="F" order by time
+UA,Categoria Assoluta,select * from at  order by time

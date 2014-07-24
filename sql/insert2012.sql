@@ -1,0 +1,64 @@
+update at set time='0:13.19' where id=6;
+update at set time='0:32.90' where id=20;
+update at set time='0:16.00' where id=22;
+update at set time='0:25.80' where id=25;
+update at set time='0:16.80' where id=29;
+update at set time='0:34.75' where id=30;
+update at set time='0:22.45' where id=33;
+update at set time='0:58.12' where id=34;
+update at set time='0:15.48' where id=37;
+update at set time='0:34.35' where id=41;
+update at set time='0:12.93' where id=47;
+update at set time='1:14.01' where id=2;
+update at set time='0:54.33' where id=5;
+update at set time='0:24.12' where id=8;
+update at set time='0:48.98' where id=16;
+update at set time='1:34.70' where id=17;
+update at set time='0:28.50' where id=19;
+update at set time='0:35.07' where id=24;
+update at set time='99:99.99' where id=26;
+update at set time='0:29.35' where id=31;
+update at set time='0:26.06' where id=32;
+update at set time='0:40.78' where id=36;
+update at set time='0:47.68' where id=39;
+update at set time='0:22.33' where id=42;
+update at set time='0:32.75' where id=43;
+update at set time='0:16.56' where id=45;
+update at set time='0:50.69' where id=48;
+update at set time='0:30.62' where id=50;
+update at set time='0:40.27' where id=51;
+update at set time='0:56.63' where id=52;
+update at set time='0:43.20' where id=55;
+update at set time='0:31.89' where id=57;
+update at set time='0:31.23' where id=1;
+update at set time='0:20.29' where id=4;
+update at set time='0:29.78' where id=9;
+update at set time='0:38.15' where id=10;
+update at set time='0:40.38' where id=12;
+update at set time='0:33.17' where id=13;
+update at set time='0:25.46' where id=14;
+update at set time='0:27.63' where id=18;
+update at set time='0:32.43' where id=21;
+update at set time='1:07.57' where id=23;
+update at set time='1:11.55' where id=27;
+update at set time='0:45.67' where id=35;
+update at set time='0:31.22' where id=38;
+update at set time='1:15.48' where id=40;
+update at set time='0:42.86' where id=44;
+update at set time='0:36.50' where id=49;
+update at set time='0:49.81' where id=54;
+update at set time='99:99.99' where id=56;
+update at set time='0:52.43' where id=58;
+update at set time='1:26.71' where id=3;
+update at set time='0:23.65' where id=7;
+update at set time='0:22.75' where id=11;
+update at set time='0:20.24' where id=15;
+update at set time='0:17.02' where id=46;
+update at set time='0:29.15' where id=53;
+update at set time='0:42.95' where id=59;
+update at set time='99:99.99' where id=28;
+
+
+
+
+

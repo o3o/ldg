@@ -1,0 +1,1 @@
+select gender, count(*) from (select * from at order by time limit 10) group by gender; 

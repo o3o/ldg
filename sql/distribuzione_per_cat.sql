@@ -1,0 +1,1 @@
+select gender, count(*) from at  group by gender; 

@@ -1,0 +1,4 @@
+U08,Categoria U8,select * from at where ({0} - year) <= 7  order by id
+U10,Categoria U10,select * from at where ({0} - year) >= 8 and ({0} - year) <= 9  order by id
+U12,Categoria U12,select * from at where ({0} - year) >= 10 and ({0} - year) <= 11  order by id
+U14,Categoria U14,select * from at where ({0} - year) >= 12 and ({0} - year) <= 13  order by id

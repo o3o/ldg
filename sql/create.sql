@@ -1,0 +1,1 @@
+CREATE TABLE "athlete" ("id" INTEGER PRIMARY KEY  NOT NULL ,"name" VARCHAR,"surname" VARCHAR,"year_of_birth" INTEGER,"gender" CHAR,"time" VARCHAR);
